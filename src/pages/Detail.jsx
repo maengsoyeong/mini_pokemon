@@ -14,8 +14,9 @@ export default function Detail() {
          }
 
     return (
-      <div className="flex flex-col justify-center items-center
-      border-[gray] p-[30px] rounded-[10px]">
+      <div className="bg-white flex flex-col justify-center items-center
+    py-[20px] px-[30px] rounded-[15px]
+    border-b-[5px] border-r-[5px] border-black">
         <div className="text-[28px] mb-[10px]">{pokemon.name}</div>
         <FavoriteButton pokemonId={Number(pokemonId)} />
         <div className="whitespace-pre-wrap text-center">

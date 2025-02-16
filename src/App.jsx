@@ -21,9 +21,11 @@ function App() {
 
   return (
     <>
-      <h1 className="text-4xl font-bold text-center text-blue-500">포켓몬 도감</h1>
+      <h1 className="border-t-[50px] border-t-[red] 
+      bg-black text-white text-4xl font-bold text-center text-blue-500">포켓몬 도감</h1>
 
-      <nav className="flex gap-[10px] justify-center">
+      <nav className="py-[10px] border-b-[3px] border-b-balck 
+      flex gap-[10px] justify-center">
         <Link to={"/"}>메인</Link>
         <Link to={"/favorite"}>찜목록</Link>
         <span>👀</span>
@@ -32,7 +34,8 @@ function App() {
 
       </nav>
 
-      <main className='flex flex-wrap gap-[20px] justify-center pt-[20px]'>
+      <main className='bg-[gray] flex flex-wrap gap-[20px] 
+      justify-center pt-[20px] pb-[20px]'>
       {console.log("✅ Rendering Routes")}
         <Routes>
           <Route path={"/"} element={ <Main />} />
