@@ -22,3 +22,17 @@ export const pokemonSlice = createSlice({
 
     }//비동기적
 })
+
+export const favoritesSlice = createSlice({
+    name: 'favorite',
+    initialState: [1, 2, 3],
+    reducers: {
+     addToFavorite(state, action) { 
+        state.push(action.payload.pokemonId)},
+     removeFromFavorite(state, action) {
+        const index = state.indexOf(action.payload.pokemonId)
+    
+         if (index !== -1) state.splice(index, 1)
+    }
+ }
+})

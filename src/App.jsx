@@ -24,9 +24,9 @@ function App() {
       <h1 className="text-4xl font-bold text-center text-blue-500">포켓몬 도감</h1>
 
       <nav className="flex gap-[10px] justify-center">
-        <Link to={"/main"}>메인</Link>
-        <Link to={"/detail/1"}>상세정보</Link>
-        <span>😊</span>
+        <Link to={"/"}>메인</Link>
+        <Link to={"/favorite"}>찜목록</Link>
+        <span>👀</span>
         <input onChange={(e) => navigate(`/search?pokemon=${e.target.value}`)}
         className='w-[120px] border-b border-[darkgray] px-2' />
 
@@ -35,7 +35,7 @@ function App() {
       <main className='flex flex-wrap gap-[20px] justify-center pt-[20px]'>
       {console.log("✅ Rendering Routes")}
         <Routes>
-          <Route path={"/main"} element={ <Main />} />
+          <Route path={"/"} element={ <Main />} />
           <Route path={"/detail/:pokemonId"} element={ <Detail />} />
           <Route path={"/search"} element={ <Search />} />
           <Route path={"/favorite"} element={ <Favorite />} />
