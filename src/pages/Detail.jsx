@@ -1,5 +1,11 @@
-console.log("✅ Favorite component loaded");
+import { useParams } from "react-router-dom"
 
 export default function Detail() {
-    return (<div>Detail</div>)
-}
+    const { pokemonId } = useParams()
+
+    return (
+      <div>
+        Detail : {pokemonId}
+      </div>
+      )
+  }

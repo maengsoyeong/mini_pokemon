@@ -12,8 +12,6 @@ console.log("BrowserRouter is wrapping App");
 
 function App() {
   const dispatch = useDispatch()
-  const pokemonData = useSelector(state => state.pokemon)
-  console.log(pokemonData)
 
   useEffect(() => {
     dispatch(fetchMultiplePokemonById(151))
@@ -25,17 +23,17 @@ function App() {
       <h1 className="text-4xl font-bold text-center text-blue-500">포켓몬 도감</h1>
 
       <nav className="flex gap-[10px] justify-center">
-        <Link to={"/"}>메인</Link>
-        <Link to={"/detail"}>상세정보</Link>
+        <Link to={"/main"}>메인</Link>
+        <Link to={"/detail/1"}>상세정보</Link>
         <Link to={"/search"}>검색</Link>
         <Link to={"/favorite"}>찜목록</Link>
       </nav>
 
-      <main className='flex justify-center'>
+      <main className='flex flex-wrap gap-[20px] justify-center pt-[20px]'>
       {console.log("✅ Rendering Routes")}
         <Routes>
-          <Route path={"/"} element={ <Main />} />
-          <Route path={"/detail/:pokemon"} element={ <Detail />} />
+          <Route path={"/main"} element={ <Main />} />
+          <Route path={"/detail/:pokemonId"} element={ <Detail />} />
           <Route path={"/search"} element={ <Search />} />
           <Route path={"/favorite"} element={ <Favorite />} />
         </Routes>
