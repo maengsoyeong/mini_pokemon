@@ -6,11 +6,12 @@ import Main from './pages/Main'
 import Detail from './pages/Detail'
 import Search from './pages/Search'
 import Favorite from './pages/Favorite'
-import { Link, Route, Routes } from 'react-router-dom'
+import { Link, Route, Routes, useNavigate } from 'react-router-dom'
 
 console.log("BrowserRouter is wrapping App");
 
 function App() {
+  const navigate= useNavigate()
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -25,8 +26,10 @@ function App() {
       <nav className="flex gap-[10px] justify-center">
         <Link to={"/main"}>메인</Link>
         <Link to={"/detail/1"}>상세정보</Link>
-        <Link to={"/search"}>검색</Link>
-        <Link to={"/favorite"}>찜목록</Link>
+        <span>😊</span>
+        <input onChange={(e) => navigate(`/search?pokemon=${e.target.value}`)}
+        className='w-[120px] border-b border-[darkgray] px-2' />
+
       </nav>
 
       <main className='flex flex-wrap gap-[20px] justify-center pt-[20px]'>
